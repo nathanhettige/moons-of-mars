@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+		<title>Moons of Mars | Book Now</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;500;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header>
+            <a id="logo" href="index.html">
+                <img src="images/logo.png" alt="Moons of Mars logo" >
+            </a>
+            
+            <div id="mobile-nav-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <menu class="none">
+                <li class="dropdown">
+                    <a class="dropbtn" href="#">Overview</a>
+                    <div class="dropdown-content">
+                        <a href="see_rooms.html">See Rooms</a>
+                        <a href="gallery.html">Gallery</a>
+                        <a href="references.html">References</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a class="dropbtn" href="book_now.html">Book Now</a>
+                </li>
+                <li class="dropdown">
+                    <a class="dropbtn" href="#">Activities</a>
+                    <div class="dropdown-content">
+                        <a href="guided_jetpack_tour.html">Guided Jetpack Tour</a>
+                        <a href="xtreme_moon_climbing.html">Xtreme Moon Climbing</a>
+                        <a href="mars_sight_seeing.html">Mars Sightseeing</a>
+                        <a href="dining.html">Dining</a>
+                        <a href="nightlife.html">Nightlife</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a class="dropbtn" href="#">Park Information</a>
+                    <div class="dropdown-content">
+                        <a href="park_information.html">Frequently Asked Questions</a>
+                        <a href="contact_us.html">Contact Us</a>
+                        <a href="getting_here.html">Getting Here</a>
+                    </div>
+                </li>
+            </menu>
+        </header>
+        
+        <section id="booking-page">
+            <form name="bookingForm">
+                <fieldset>
+                    <div class="form-item">
+                        <label for="form-destination">Destination</label>
+                        <div class="form-element">
+                            <select id="form-destination" name="destination">
+                                <option value="none" selected disabled hidden>
+                                    Select a Moon
+                                </option>
+                                <option value="phobos">Phobos</option>
+                                <option value="deimos">Deimos</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div id="name">
+                        <div class="form-item">
+                            <label for="form-first-name">First Name</label>
+                            <div class="form-element">
+                               <input type="text" name="firstName" id="form-first-name">
+                            </div>
+                        </div>
+    
+                        <div class="form-item">
+                            <label for="form-last-name">Last Name</label>
+                            <div class="form-element">
+                               <input type="text" name="lastName" id="form-last-name">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="dates">
+                        <div class="form-item">
+                            <label for="form-check-in">Check in</label>
+                            <div class="form-element">
+                               <input type="date" name="checkIn"  id="form-check-in">
+                            </div>
+                        </div>
+    
+                        <div class="form-item">
+                            <label for="form-check-out">Check out</label>
+                            <div class="form-element">
+                               <input type="date" name="checkOut" id="form-check-out">
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <div id="options">
+                        <div class="form-item">
+                            <label for="form-number-rooms">Rooms</label>
+                            <div class="form-element">
+                                <select id="form-number-rooms" name="rooms">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </div>
+                        </div>
+    
+                        <div class="form-item">
+                            <label for="form-number-people">Adults</label>
+                            <div class="form-element">
+                                <select id="form-number-people" name="adults">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <div class="form-item">
+                        <button type="submit">Book Now</button>
+                    </div>
+			        
+			    </fieldset>
+            </form>
+
+            <div id="information">
+                <h3>Make your reservation</h3>
+                <p>Choose to stay on either Deimos or Phobos. Both locations are identical 
+                    and shuttles are available to hop back and forth between them. 
+                </p>
+            </div>
+            
+        </section>
+
+        <footer>
+            <nav id="secondary-menu">
+                <p id='copyright'>Moons of Mars © 2021</p>
+                <ul>
+                    <li>
+                        <a href="under_construction.html">Twitter</a>
+                    </li>
+                    <li>
+                        <a href="under_construction.html">Youtube</a>
+                    </li>
+                    <li>
+                        <a href="under_construction.html">Instagram</a>
+                    </li>
+                    <li>
+                        <a href="under_construction.html">Flickr</a>
+                    </li>
+                    <li>
+                        <a href="under_construction.html">LinkedIn</a>
+                    </li>
+                    <li>
+                        <a href="under_construction.html">Privacy Policy</a>
+                    </li>
+                </ul>
+            </nav>
+        </footer>
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/book-now.js"></script>
+        <script src="js/nav_bar.js"></script>
+    </body>

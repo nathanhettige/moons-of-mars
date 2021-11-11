@@ -1,0 +1,1214 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Inconsolata', monospace;
+	font-size: 14px;
+	line-height: 1.5em;
+	background:black;
+	color: white;
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+
+/* Text */
+h1 {
+    font-size: 10vh;
+    line-height: 10vh;
+    padding-bottom: 3vh;
+}
+
+h2 {
+    font-size: 64px;
+    line-height: 64px;
+    padding-bottom: 3vh;
+}
+
+h3 {
+    font-size: 5vh;
+    line-height: 5vh;
+    padding-bottom: 1vh;
+}
+
+h4 {
+    font-size: 3.5vh;
+    line-height: 4vh;
+}
+
+
+/* Header */
+header {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    width: 100vw;
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+    padding-top: 25px;
+    padding-left: 15px;
+    transition: top 0.4s;
+}
+
+#logo {
+    width: 12%;
+    padding-right: 2vw;
+}
+
+#logo img{
+    width: 100%;
+}
+
+menu {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    align-items: center;
+    font-size: 1.5em;
+    line-height: 1em;
+}
+
+menu .dropdown {
+    position:relative;
+    display: block;
+}
+
+menu .dropbtn {
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+    white-space: nowrap;
+    padding: 2vw;
+}
+
+.dropbtn:hover {
+    transition: 0.25s;
+    background-color: rgb(255, 255, 255, 20%);
+}
+
+.dropdown-content {
+    display:none;
+    position:absolute;
+    margin-top: 2vw;
+    width: 100%;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    padding: 1.5vh;
+    background-color: rgb(255, 255, 255, 30%);
+    z-index: 1;
+}
+
+.dropdown-content a:hover {
+    transition: 0.25s;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* Welcome */
+#welcome {
+    display: block;
+    height: 100vh;
+    width: auto;
+    position: relative;
+}
+
+#welcome .text {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    margin: 20% 5%; 
+    width: 45%;
+}
+
+
+#welcome .btn {
+    transition: 1.25s;
+    text-decoration: None;
+    border-style: solid;
+    color: inherit;
+    font-size: 2em;
+    padding: 1vh 2vh;
+    margin-left: 1vh;
+    width: max-content;
+}
+
+#welcome .btn:hover {
+    transition: .5s;
+    background-color:rgb(0, 0, 0, 35%);
+    color: white;
+}
+
+#welcome video {
+    object-fit: cover;
+    height: 100%;
+    width: 100vw;
+    position: absolute;
+    z-index: -1;
+}
+
+#scrolldown {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+}
+
+.arrow {
+    position: absolute;
+    width: 42px;
+    height:12px;
+    opacity: 0;
+    transform: scale3d(0.5, 0.5, 0.5);
+    animation: scroll-arrow 6s ease-out infinite;
+}
+
+.arrow:first-child {
+    animation: scroll-arrow 6s ease-out 2s infinite;
+}
+  
+.arrow:nth-child(2) {
+    animation: scroll-arrow 6s ease-out 4s infinite;
+}
+
+.arrow:before,
+.arrow:after {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 51%;
+  background: rgb(255, 255, 255, 0.7);
+}
+
+.arrow:before {
+  left: 0;
+  transform: skew(0deg, 30deg);
+}
+
+.arrow:after {
+  right: 0;
+  width: 50%;
+  transform: skew(0deg, -30deg);
+}
+
+@keyframes scroll-arrow {
+  25% {
+    opacity: 0.8;
+  }
+
+  33% {
+    opacity: 0.8;
+    transform: translateY(45px);
+  }
+
+  67% {
+    opacity: 0.8;
+    transform: translateY(60px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(82.5px) scale3d(0.5, 0.5, 0.5);
+  }
+}
+
+/* Display */
+#display {
+    display: block;
+    height: 80vh;
+    width: 100%;
+    position: relative;
+}
+
+#display .text {
+    position: absolute;
+    left: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    text-align: right;
+    z-index: 1;
+    margin-right: 10vw;
+}
+
+#display video {
+    opacity: 75%;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+}
+
+#display .btn {
+    transition: 1.25s;
+    text-decoration: None;
+    border-style: solid;
+    color: inherit;
+    font-size: 1.5em;
+    padding: 1vh 3vh;
+    margin-top: 1.5vh;
+    width: max-content;
+}
+
+#display .btn:hover {
+    transition: .5s;
+    background-color:rgb(0, 0, 0, 35%);
+    color: white;
+}
+
+/* Moon Display */
+#moon-display {
+    scroll-snap-align: start;
+    display: block;
+    margin: 5% 0%;
+}
+
+#moon-display h1 {
+    line-height: 1em;
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold;
+}
+
+#moon-display h5 {
+    text-align: center;
+    font-size: 2em;
+    padding-top: 1vw;
+}
+
+#moons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 2.5%;
+}
+
+.moon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.moon figcaption  {
+    line-height: 3.5vw;
+    font-size: 3vw;
+    text-align: center;
+}
+
+.moon img {
+    width: 35vw;
+}
+
+.moon figcaption .summary {
+    padding-top: 0.5vh;
+    line-height: 1.25em;
+    font-size: 50%;
+}
+
+
+
+/* Footer */
+#secondary-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#copyright {
+    opacity: 70%;
+}
+
+#secondary-menu ul {
+    padding-left: 2vw;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+
+#secondary-menu a {
+    text-decoration: none;
+    color: inherit;
+    padding-right: 2vw;
+}
+
+#secondary-menu a:hover {
+    transition: .5s;
+    opacity: 60%;
+}
+
+/* Search */
+#search {
+    padding-top: 15vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 30vh;
+    justify-content: center;
+    background-image: url("../images/FAQ_backdrop.jpeg");
+    background-size: cover;
+}
+
+#search-bar {
+    background-color: rgb(173, 216, 230, 80%);
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    padding: 1vw;
+    border-radius: 7px;
+}
+
+#search-bar input {
+    all: unset;
+    font-size: 2.5vh;
+    width: 100%;
+    height: 100%;
+    color: black;
+    
+}
+
+#search-bar button {
+    all: unset;
+    width: 30px;
+    height: 30px;
+    fill: grey;
+  }
+
+/* FAQ */
+#faq {
+    padding: 6vh;
+}
+
+#faq h3 {
+    padding-bottom: 4vh;
+}
+
+.question {
+    position: relative;
+    padding: 1vw;
+    margin-bottom: 3.5vh;
+    font-size: 2.5vh;
+    line-height: 3vh;
+    border-radius: 7px;
+    background-color: rgba(68, 132, 216, 0.4);
+}
+
+.question h4 {
+    font-size: 3vh;
+}
+
+.question .expand-button {
+    display: none;
+    position: absolute;
+    filter: invert(1);
+    right: 2vw;
+    top: 1.5vw;
+    height: 20px;
+    width: 20px;
+}
+
+.question .answer {
+    width: 95%;
+    padding-top: 1vw;
+    padding-right: 1vw;
+}
+
+body.js .question .expand-button  {
+    display: inline-block;
+    transition: 0.5s;
+}
+
+body.js .question .expand-button.expanded  {
+    transition: 0.5s;
+    transform: rotate(180deg);
+}
+
+body.js .question .answer {
+    display: none;
+} 
+
+body.js .question .answer.expanded {
+    display: block;
+} 
+
+/* Booking Page */
+#booking-page {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("../images/rocket.jpg");
+    background-size: cover;   
+}
+
+#booking-page form {
+    background-color: rgba(131, 181, 228, 0.623);
+    color: white;
+    border-radius: 5px;
+    padding: 1vw;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: white;
+
+}
+
+#booking-page fieldset {
+    border-style: none;
+}
+
+
+#booking-page .form-item {
+    padding: 10px;
+}
+
+#booking-page #information {
+    margin-left: 5vw;
+    width: 45%;
+}
+
+#information p {
+    font-size: 2.5vh;
+    line-height: 3vh;
+    font-weight: bold;
+}
+
+#booking-page button {
+    margin-top: 2vh;
+    padding: 7px;
+    font: inherit;
+    font-size: 2vh;
+    background-color: rgb(80, 112, 200);
+    color: white;
+    border-color: rgb(43, 82, 190);
+    border-radius: 5px;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.form-item label {
+    font-size: 3vh;
+    line-height: 4vh;
+}
+
+.form-item label.error {
+    color: red;
+}
+
+.form-item input.error, select.error {
+    border-color: red;
+}
+
+.form-item input, .form-item select {
+    font: inherit;
+    padding: 5px;
+    font-size: 2vh;
+    border-radius: 3px;
+    border-width: 1px;
+    background-color: white;
+}
+
+
+#name, #dates, #options {
+    display:flex;
+    flex-direction: row;
+}
+
+
+/* Construction */
+#under-construction {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#under-construction video {
+    filter: blur(3px);
+    opacity: 50%;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+}
+
+/* Gallery */
+#gallery {
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top:12vh;
+    background-image: url("../images/black-sand.jpeg");
+    background-size: cover;
+}
+
+
+#gallery-box {
+    overflow: scroll;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#gallery-box a {
+    width: 350px;
+    height: 230px;
+    margin: 4px 6px;
+}
+
+#gallery-box img:hover {
+    transition: 350ms;
+    opacity: 70%;
+}
+
+#gallery-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Jetpacking */
+#jetpacking{
+    padding-top: 15vh;
+    height: 85vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    background: #F5892E;
+    background: linear-gradient(to bottom, #F5892E, #705545);
+}
+
+#jetpacking h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 20vh;
+    background-image: url("../images/jetpacking.jpg");
+    background-size: cover;
+}
+
+#jetpacking article {
+    margin: 2.5%;
+    height: 65%;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+#jetpacking article .description {
+    width: 60%;
+}
+
+#jetpacking article h3 {
+    padding-bottom: 2vh;
+}
+
+#jetpacking article p {
+    font-size: 2.5vh;
+    line-height: 3.5vh;
+    padding-bottom: 3vh;
+    width: 95%;
+}
+
+#jetpacking article small {
+    font-size: 1vw;
+    line-height: 2vh;
+    position: absolute;
+    bottom: 0;
+}
+
+#jetpacking article .summary {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 30%;
+    margin-left: 5%;
+    background-color: rgba(230, 106, 49, 0.397);
+    border-radius: 5px;
+    border-style: solid;
+    
+}
+
+#jetpacking article .summary-title {
+    font-size: 2vw;
+    line-height: 7vh;
+}
+
+#jetpacking article .summary-item {
+    font-size: 1.5vw;
+    line-height: 6vh;
+    border-bottom: 3px solid white;
+}
+
+#jetpacking article .summary-item:last-child {
+    border-bottom: none;
+}
+
+#jetpacking article .summary-image {
+    padding: 0 1vw 0 1vw;
+    max-height: 50%;
+}
+
+#jetpacking article .summary-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 3px solid rgba(255, 255, 255, 0.24);
+}
+
+/* Moon Climbing */
+#moon-climbing{
+    padding-top: 15vh;
+    height: 85vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    background: #E28B4B;
+    background: linear-gradient(to top, #E28B4B, #C3C8D3);
+}
+
+#moon-climbing h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 20vh;
+    background-image: url("../images/moonclimbing.jpg");
+    background-size: cover;
+}
+
+#moon-climbing article {
+    margin: 2.5%;
+    height: 65%;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+#moon-climbing article .description {
+    width: 60%;
+}
+
+#moon-climbing article h3 {
+    padding-bottom: 2vh;
+}
+
+#moon-climbing article p {
+    font-size: 2.5vh;
+    line-height: 3.5vh;
+    padding-bottom: 3vh;
+    width: 95%;
+}
+
+#moon-climbing article small {
+    font-size: 1vw;
+    line-height: 2vh;
+    position: absolute;
+    bottom: 0;
+}
+
+#moon-climbing article .summary {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 30%;
+    margin-left: 5%;
+    background-color: rgba(70, 44, 32, 0.397);
+    border-radius: 5px;
+    border-style: solid;
+    
+}
+
+#moon-climbing article .summary-title {
+    font-size: 2vw;
+    line-height: 7vh;
+}
+
+#moon-climbing article .summary-item {
+    font-size: 1.5vw;
+    line-height: 6vh;
+    border-bottom: 3px solid white;
+}
+
+#moon-climbing article .summary-item:last-child {
+    border-bottom: none;
+}
+
+#moon-climbing article .summary-image {
+    padding: 0 1vw 0 1vw;
+    max-height: 50%;
+}
+
+#moon-climbing article .summary-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 3px solid rgba(255, 255, 255, 0.24);
+}
+
+/* Mars Sightseeing */
+#mars-sightseeing {
+    padding-top: 15vh;
+    height: 85vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    background: #7B9DF5;
+    background: linear-gradient(to bottom, #7B9DF5, #282B32);
+}
+
+#mars-sightseeing h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 20vh;
+    background-image: url("../images/sightseeing.jpg");
+    background-size: cover;
+}
+
+#mars-sightseeing article {
+    margin: 2.5%;
+    height: 65%;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+#mars-sightseeing article .description {
+    width: 60%;
+}
+
+#mars-sightseeing article h3 {
+    padding-bottom: 2vh;
+}
+
+#mars-sightseeing article p {
+    font-size: 2.5vh;
+    line-height: 3.5vh;
+    padding-bottom: 3vh;
+    width: 95%;
+}
+
+#mars-sightseeing article small {
+    font-size: 1vw;
+    line-height: 2vh;
+    position: absolute;
+    bottom: 0;
+}
+
+#mars-sightseeing article .summary {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 30%;
+    margin-left: 5%;
+    background-color: rgba(42, 71, 197, 0.397);
+    border-radius: 5px;
+    border-style: solid;
+    
+}
+
+#mars-sightseeing article .summary-title {
+    font-size: 2vw;
+    line-height: 7vh;
+}
+
+#mars-sightseeing article .summary-item {
+    font-size: 1.5vw;
+    line-height: 6vh;
+    border-bottom: 3px solid white;
+}
+
+#mars-sightseeing article .summary-item:last-child {
+    border-bottom: none;
+}
+
+#mars-sightseeing article .summary-image {
+    padding: 0 1vw 0 1vw;
+    max-height: 50%;
+}
+
+#mars-sightseeing article .summary-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 3px solid rgba(255, 255, 255, 0.24);
+}
+
+/* Contact Form */
+#contact-page {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: #C6F6F0;
+    background: linear-gradient(to top, #C6F6F0, #2F87C1);
+}
+
+#contact-form h3 {
+    margin-bottom: 2vh;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    padding: 10px;
+    margin-left: 10vw;
+    font-size: 1.1em;
+    
+}
+
+#contact-form #contact-name, #contact-form #contact-email {
+    width: 45%;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 1vh;
+    font: inherit;
+}
+
+#contact-form textarea {
+    width: 96%;
+    padding: 10px; 
+    font-size: inherit;
+    font: inherit;
+    resize: vertical;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+#contact-form #send-button {
+    padding: 7px;
+
+}
+
+#contact-info {
+    padding-left: 100px;
+    font: inherit;
+    font-size: 2em;
+    line-height: 2em;
+}
+
+
+#contact-info i {
+    /* width: 1vw; */
+    padding-right: 1vw;
+}
+
+
+
+.room-display {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+.room-display div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 65vw;
+    padding: 3vw;
+    position: relative;
+    text-align: center;
+}
+
+.room-display p {
+    font-size: 1.5em;
+    line-height: 1.5em;
+}
+
+
+.room-display div img{
+    width: 35vw;
+    object-fit:cover;
+    position: absolute;
+    z-index: -1;
+    filter: blur(40px);
+    opacity: 75%;
+
+}
+
+.room-display img {
+    width: 65vw;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Dining */
+#dining {
+    display: flex;
+    padding: 20vh 7vw 5vh;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    background: #FF0101;
+    background: linear-gradient(to bottom, #FF0101, #FBBFAF);
+}
+
+#dining p {
+    font-size: 1.5em;
+    line-height: 1.25em;
+    width: 90%;
+}
+
+.venue {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    flex-direction: row;
+    margin-top: 5vh;
+    padding: 20px 20px 20px 30px;
+    border: solid white 2px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.venue .text {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.venue h3{
+    margin-bottom: 2vh;
+}
+
+.venue a {
+    margin-top: 1vh;
+    font-size: 1.25em;
+    color: white;
+    width: max-content;
+}
+
+.venue a:hover {
+    opacity: 80%;
+}
+
+.venue img {
+    border: solid rgba(255, 255, 255, 0.753) 2px;
+    border-radius: 5px;
+    height: 35vh;
+    width: auto;
+}
+
+/* Getting Here */
+#airport {
+    background-image: url("../images/trace.jpeg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 0 5vw 3vh;
+    width: 90vw;
+}
+
+
+#airport .horizontal {
+    margin-top: 1vh;
+    padding-right: 1vw;
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(0, 0, 0, 0.404);
+    border-radius: 5px;
+}
+
+.horizontal p {
+    margin-left: 30px;
+    margin-top: 50px;
+    font-size: 1.75em;
+    line-height: 1.2em;
+    width: 45vw;
+    
+}
+
+iframe {
+    border-radius: 3px;
+    width: 40vw;
+}
+
+/* Nightlife */
+#nightlife {
+    background-image: url("../images/gallery/image4.jpeg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 20vh 5vw 3vh;
+    width: 90vw;
+}
+
+#nightlife p {
+    font-size: 1.5em;
+    line-height: 1.25em;
+    width: 90%;
+}
+
+#nightlife .venue {
+    background-color: rgba(0, 0, 0, 0.74);
+}
+
+/* References */
+#references {
+    padding-top: 15vh;
+    padding-left: 5vw;
+    width: 80%;
+}
+
+#references {
+    font-size: 1.5em;
+    line-height: 1.5em;
+}
+
+@media only screen and (max-width: 700px) {  
+    h2 {
+        font-size: 48px;
+        line-height: 48px;
+        padding-bottom: 3vh;
+    }
+    
+    h3 {
+        font-size: 5vh;
+        line-height: 5vh;
+        padding-bottom: 1vh;
+    }
+    
+    h4 {
+        font-size: 3.5vh;
+        line-height: 4vh;
+    }
+
+    header {
+        padding-left: 0px;
+        padding-bottom: 3vh;
+        width: 100vw;
+        height:10vh;
+
+    }
+
+    #logo {
+        z-index: 2;
+        height: 10vh;
+        width:100vw;
+    }
+
+    #logo img {
+        width:100vw;
+        height: 10vh;
+        object-fit: contain;
+    }
+
+    menu {
+        display: none;
+        transition: 0.4s;
+
+    }
+
+    menu.show {
+        display: block;
+        position: absolute;
+        left: 0;
+        transition: left 0.4s;
+        top:0;
+        width: max-content;
+        height: 100vh;
+        z-index: 1000;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: rgba(0, 0, 0, 0.897);
+        padding-right: 20px;
+        padding-top: 30px;
+    }
+
+    menu .dropdown {
+        width:100%;
+        padding-right: 20px;
+        font-size: 1.5em;
+        line-height: 2em;
+        border-bottom: solid white 1px;
+    }
+
+
+    .dropdown-content a {
+        position: relative;
+        font-size: 80%;
+        line-height: 80%;
+        z-index: 2;
+        height: 100%;
+        background-color:black;
+        border-bottom: solid white 1px;
+    }
+
+
+    #mobile-nav-btn {
+        display: flex;
+        z-index: 2;
+        flex-direction: column;
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        margin-left: 1vw;
+        padding: 20px;
+    }
+
+
+    #mobile-nav-btn.show {
+        transition: left 0.4s;
+        left:80%;
+    }
+
+    #mobile-nav-btn span {
+        display: block;
+        background-color: white;
+        margin-bottom: 5px;
+        height: 2px;
+        width: 30px;
+    }
+
+    /* Welcome */
+    #welcome .text {
+        width: 90%; 
+        top: 25%;
+    }
+
+    #welcome .btn {
+        font-size: 1.5em;
+    }
+
+    #scrolldown {
+        left:45%;
+    }
+
+}
+
